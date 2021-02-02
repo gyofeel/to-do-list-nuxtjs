@@ -2,7 +2,7 @@ import { getAccessorType } from 'typed-vuex';
 import * as todolist from '~/store/todolist';
 
 export const state = () => ({
-  userName: 'Gyopil'
+  userName: 'User'
 });
 
 export const indexAccessor = getAccessorType({
