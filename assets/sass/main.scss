@@ -1,1 +1,28 @@
 @import './abstracts/variables';
+
+body {
+    margin: 20px 5%;
+    background-color: $light-green;
+    color: $dark-brown;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: $font-xxl;
+}
+
+h2 {
+    font-size: $font-xl;
+}
+
+h3 {
+    font-size: $font-l;
+}
+
+h4 {
+    font-size: $font-m;
+}
+
+p {
+    font-size: $font-s;
+}
