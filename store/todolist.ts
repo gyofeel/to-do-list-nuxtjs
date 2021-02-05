@@ -5,7 +5,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-	addTodo: (state: any, text: string, priority: Priority, isDone: boolean) => {
+	addTodo: (state: any, { text, priority, isDone }) => {
 		const Todo: Todo = {
 			id: `${text}-${Date.now()}`,
 			date: new Date(),
@@ -18,13 +18,18 @@ export const mutations = {
 		return Todo;
 	},
 	removeTodo: (state: any, id: string) => {
-		return state.todos.splice(state.todos.findIndex((item: Todo) => item.id === id));
+		const idx = state.todos.findIndex((item: Todo) => item.id === id);
+		if (idx < 0) {
+			return;
+		}
+		console.log(idx);
+		return state.todos.splice(idx, 1);
 	},
-	setPriority: (state: any, id: string, priority: Priority) => {
+	setPriority: (state: any, { id, priority }: {id: string, priority: boolean}) => {
 		const idx = state.todos.findIndex((item: Todo) => item.id === id);
 		state.todos[idx].priority = priority;
 	},
-	setDone: (state: any, id: string, done: boolean) => {
+	setDone: (state: any, { id, done }: {id: string, done: boolean}) => {
 		const idx = state.todos.findIndex((item: Todo) => item.id === id);
 		state.todos[idx].isDone = done;
 	}
