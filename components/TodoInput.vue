@@ -55,14 +55,7 @@ export default {
     justify-content: space-around;
     align-items: center;
     .input {
-      background: transparent;
-      border: none;
-      border-bottom: 3px solid $dark-brown;
-      padding: 15px 10px 5px;
-      font-size: $font-m;
-      &:focus {
-        outline: none;
-      }
+      @include input;
     }
 
     .priority-selector {
@@ -82,15 +75,9 @@ export default {
   }
 
   .add-button {
-    height: 50px;
-    font-size: $font-l;
     margin-left: 15px;
-    margin-top: 20px;
-    text-decoration: underline;
-    &:hover {
-      color: $light-green;
-      background: $dark-brown;
-    }
+	  margin-top: 20px;
+    @include insert-button;
   }
 }
 </style>

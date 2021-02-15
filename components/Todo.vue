@@ -1,24 +1,23 @@
 <template>
-  <div class="todo">
-      <!-- <span class="number">{{index}}</span> -->
+  <div 
+		class="todo"
+		@click="onClickDone"
+  >
 			<span class="text">{{item.text}}</span>
 			<div
 				class="button-wrap"
 			>
 				<span class="priority">{{item.priority}}</span>
-				<button 
+				<div 
 				class="done-button"
-				@click="onClickDone"
 				:class="{
 					'--done': item.isDone
 				}"
-				></button>
-				<button 
+				></div>
+				<div 
 					class="delete-button"
 					@click="onClickDelete"
-				>
-					삭제
-				</button>
+				>삭제</div>
 			</div>
   </div>
 </template>
@@ -50,14 +49,26 @@ export default {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	padding: 7px 5px;
+	cursor: pointer;
+
+	&:hover {
+		outline: 1px solid $dark-brown;
+	}
+	.text {
+		font-weight: bold;
+	}
 	.priority {
 		font-style: italic;
+		font-weight: bold;
 	}
 	.button-wrap {
+		display: flex;
+		align-items: center;
 		.done-button {
 			margin-left: 7px;
-			width: 10px;
-			height: 10px;
+			width: 15px;
+			height: 15px;
 			border: 1px solid $dark-brown;
 			&.--done {
 				background: $dark-brown;
@@ -65,7 +76,7 @@ export default {
 		}
 		.delete-button {
 			margin-left: 7px;
-			padding: 2px 1px;
+			font-size: $font-xs;
 			&:hover {
 				color: $light-green;
 				background: $dark-brown;

@@ -1,0 +1,21 @@
+@mixin input {
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid $dark-brown;
+	padding: 15px 10px 5px;
+	font-size: $font-m;
+	&:focus {
+		outline: none;
+	}
+}
+
+@mixin insert-button {
+	width: fit-content;
+	height: 50px;
+	font-size: $font-l;
+	text-decoration: underline;
+	&:hover {
+		color: $light-green;
+		background: $dark-brown;
+	}
+}

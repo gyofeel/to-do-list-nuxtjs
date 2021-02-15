@@ -8,7 +8,7 @@
       :list="todos"
     >
       <template #item="{ index, item }">
-        <TodoItem 
+        <Todo 
           :index="index"
           :item="item"
           @bedone="onClickTodoDone"
@@ -22,7 +22,7 @@
       :list="dones"
     >
       <template #item="{ index, item }">
-        <TodoItem 
+        <Todo
           :index="index" 
           :item="item" 
           @bedone="onClickTodoDone"
@@ -30,16 +30,12 @@
         />
       </template>
     </List>
-    <Input @click="onClickAdd" />
+    <TodoInput @click="onClickAdd" />
 </div>
 </template>
 
 <script lang="ts">
 import { Todo } from '../../assets/types';
-
-// import List from '../../components/List.vue';
-// import TodoItem from '../../components/Todo.vue';
-// import Input from '~components/Input.vue';
 
 export default {
   asyncData({ app: { $accessor } }: any) {

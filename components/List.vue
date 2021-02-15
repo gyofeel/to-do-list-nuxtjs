@@ -33,9 +33,9 @@ export default {
 <style lang="scss" scoped>
 .list {
 	padding: 30px 0;
+	min-height: 150px;
 	display: flex;
 	flex-flow: column nowrap;
-	
 	.title {
 		font-style: italic;
 		text-decoration: underline;
