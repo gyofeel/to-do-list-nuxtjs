@@ -48,5 +48,8 @@ export default {
     scss: [
         '~/assets/sass/main.scss',
     ]
-}
+  },
+  serverMiddleware: [
+    '~/api/index.ts'
+  ]
 }
